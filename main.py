@@ -18,6 +18,7 @@ st.set_page_config(
     layout = 'wide'
 )
 
+import nltk
 nltk.download('stopwords')
 
 #@st.cache_data
