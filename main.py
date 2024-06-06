@@ -18,6 +18,8 @@ st.set_page_config(
     layout = 'wide'
 )
 
+nltk.download('stopwords')
+
 #@st.cache_data
 def extract_data():
     lowongan_kerja = pd.read_excel(
