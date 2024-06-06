@@ -20,6 +20,7 @@ st.set_page_config(
 
 import nltk
 nltk.download('stopwords')
+nltk.download('punkt')
 
 #@st.cache_data
 def extract_data():
