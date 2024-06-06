@@ -18,7 +18,7 @@ st.set_page_config(
     layout = 'wide'
 )
 
-@st.cache_data
+#@st.cache_data
 def extract_data():
     lowongan_kerja = pd.read_excel(
         'https://raw.githubusercontent.com/Rizkiramdani04/byte_brigade/main/cleaned_lowongan_kerja_only.xlsx',
@@ -40,7 +40,7 @@ def remove_stopwords(text):
     filtered_text_lemmatized = ' '.join(set(filtered_text_lemmatized))
     return (filtered_text_lemmatized)
 
-@st.cache_data
+#@st.cache_data
 def transform_data(data):
 
     # Bersihkan data judul
@@ -83,7 +83,7 @@ def transform_data(data):
     
     return(data)
 
-@st.cache_data
+#@st.cache_data
 def get_dimension(
         data : pd.DataFrame, 
         column : str,
@@ -100,7 +100,7 @@ def get_dimension(
     
     return(dim)
     
-@st.cache_data
+#@st.cache_data
 def get_master_states(url_geojson):
 
     # Fetch the GeoJSON data
