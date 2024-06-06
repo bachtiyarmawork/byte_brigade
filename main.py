@@ -19,9 +19,14 @@ st.set_page_config(
 )
 
 import nltk
-nltk.download('stopwords')
-nltk.download('punkt')
-nltk.download('wordnet')
+# Check if the required NLTK data is already downloaded
+if not all(os.path.exists(f"{nltk.data.find('stopwords')}.zip"),
+           os.path.exists(f"{nltk.data.find('punkt')}.zip"),
+           os.path.exists(f"{nltk.data.find('wordnet')}.zip")):
+    # Download the required NLTK data
+    nltk.download('stopwords')
+    nltk.download('punkt')
+    nltk.download('wordnet')
 
 #@st.cache_data
 def extract_data():
