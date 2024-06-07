@@ -28,7 +28,7 @@ def load_nltk_data():
 
 load_nltk_data()
 
-#@st.cache_data
+@st.cache_data
 def extract_data():
     lowongan_kerja = pd.read_excel(
         'https://raw.githubusercontent.com/Rizkiramdani04/byte_brigade/main/cleaned_lowongan_kerja_only.xlsx',
@@ -50,7 +50,7 @@ def remove_stopwords(text):
     filtered_text_lemmatized = ' '.join(set(filtered_text_lemmatized))
     return (filtered_text_lemmatized)
 
-#@st.cache_data
+@st.cache_data
 def transform_data(data):
 
     # Bersihkan data judul
@@ -93,7 +93,7 @@ def transform_data(data):
     
     return(data)
 
-#@st.cache_data
+@st.cache_data
 def get_dimension(
         data : pd.DataFrame, 
         column : str,
@@ -188,6 +188,7 @@ def get_master_states(url_geojson):
     
     return(master_state)
 
+@st.cache_resource
 def usa_map(data, select_judul_loker):
     
     url_geojson = 'https://raw.githubusercontent.com/python-visualization/folium/master/examples/data/us-states.json'
@@ -252,7 +253,7 @@ def text_similarity(text1, text2):
     tfidf_matrix = vectorizer.fit_transform([text1, text2])
     return cosine_similarity(tfidf_matrix[0], tfidf_matrix[1])[0][0]
 
-
+@st.cache_resource
 def layout(data_input):
     data = data_input.copy()
     
