@@ -253,7 +253,6 @@ def text_similarity(text1, text2):
     tfidf_matrix = vectorizer.fit_transform([text1, text2])
     return cosine_similarity(tfidf_matrix[0], tfidf_matrix[1])[0][0]
 
-@st.cache_resource
 def layout(data_input):
     data = data_input.copy()
     
